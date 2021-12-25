@@ -1,15 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital@1&display=swap');
+
+
 :root {
-    --tool-tip-color: black;
+    --tool-tip-color: #555;
+    --tool-tip-divider-color: #555;
+    --tool-tip-icon-color: #999;
+    --background-color: #111;
+    --text-color: #fff;
   }
 
 
+body {
+    background: var(--background-color);
+}
+
+::selection{
+    background: #fff2a8;
+    color: var(--background-color);
+}
+
+.article{
+    display: flex;
+    margin: auto;
+    max-width: 60ch;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Courier Prime', monospace;
+    line-height: 1.5em;
+    color: var(--text-color);
+
+}
+
+
 .tooltip {
+    display: flex;
     user-select: none;
     width: 10rem;
     height: 2rem;
-    background: black;
+    background: var(--tool-tip-color);
     text-align: center;
     position: absolute;
+    border-radius: 9999px;
   }
   
   .tooltip__tail {
@@ -18,18 +51,27 @@
     position: absolute;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    
     border-top: 10px solid var(--tool-tip-color);
   }
 
   .tooltip__icon {
-    width: 1.8rem;
+    vertical-align: bottom;
+    width: 2rem;
     height: 2rem;
-    fill: white;
-    padding: 0.1rem;
     text-align: center;
   }
+
+  .tooltip__divider {
+    display: inline-block;
+    width: 0.1rem;
+    height: 80%;
+    vertical-align: top;
+    border-left: 2px solid var(--tool-tip-divider-color);
+  }
   
-  .tooltip__icon:last-child {
-    border-left: 1px solid white;
+
+  .tooltip__icon__svg {
+      width: 100%;
+      height: 100%;
+      fill: var(--tool-tip-icon-color);
   }
