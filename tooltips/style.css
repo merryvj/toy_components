@@ -1,9 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital@1&display=swap');
 
 
+@keyframes slideup {
+    from {
+        opacity: 0.5;
+        transform: translate(0px, 10px);
+    }
+    90%{
+        transform: translate(0px, -1px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}
+
 :root {
     --tool-tip-color: #555;
-    --tool-tip-divider-color: #555;
+    --tool-tip-divider-color: #666;
     --tool-tip-icon-color: #999;
     --background-color: #111;
     --text-color: #fff;
@@ -35,7 +49,9 @@ body {
 
 
 .tooltip {
+    animation: slideup 0.1s ease-out;
     display: flex;
+    justify-content: space-around;
     user-select: none;
     width: 10rem;
     height: 2rem;
@@ -43,15 +59,17 @@ body {
     text-align: center;
     position: absolute;
     border-radius: 9999px;
+    padding: 0.5rem 0.2rem 0.2rem 0.4rem;
   }
   
   .tooltip__tail {
+    animation: slideup 0.1s ease-out;
     width: 0; 
     height: 0; 
     position: absolute;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid var(--tool-tip-color);
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid var(--tool-tip-color);
   }
 
   .tooltip__icon {
@@ -75,3 +93,4 @@ body {
       height: 100%;
       fill: var(--tool-tip-icon-color);
   }
+
