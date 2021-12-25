@@ -8,11 +8,13 @@
     <body>
 
 
-        <div>
-            and today I will
-        </div>
-        <div>
-            do nothing
+        <div class="article">
+            <div>
+                and today I will
+            </div>
+            <div>
+                do nothing
+            </div>
         </div>
 
         <script>
@@ -39,8 +41,15 @@
             const tooltipTail = document.createElement("div");
             tooltipTail.classList.add("tooltip__tail");
 
-            document.onmouseup = () => {
+            const articleElement = document.getElementsByClassName("article")[0];
+            articleElement.onmouseup = (event) => {
                 const selection = document.getSelection();
+                if (selection.type != "Range") {
+                    document.body.removeChild(tooltip);
+                    document.body.removeChild(tooltipTail);
+                    return;
+                }
+            
                 const anchorNode = selection.anchorNode;
                 const focusNode = selection.focusNode;
 
