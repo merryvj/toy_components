@@ -69,19 +69,25 @@
                 document.body.appendChild(tooltip);
                 document.body.appendChild(tooltipTail);
 
-                const rangeRect = selection.getRangeAt(0).getClientRects()[0];
 
                 const tooltipWidth = tooltip.offsetWidth;
                 const tooltipHeight = tooltip.offsetHeight;
                 const tooltipTailWidth = tooltipTail.offsetWidth;
                 const tooltipTailHeight = tooltipTail.offsetHeight;
 
-                const y = rangeRect.y;
-                const middleX = rangeRect.x + (rangeRect.width/2);
-                tooltip.style.left = `${middleX - tooltipWidth/2}px`;
-                tooltip.style.top = `${y - tooltipHeight}px`;
+                const rangeRects = selection.getRangeAt(0).getClientRects();
+
+                const parentElement = selection.anchorNode.parentElement;
+                const y = rangeRects[0].y;
+                const x = rangeRects.length > 1 ?
+                    parentElement.offsetLeft + parentElement.offsetWidth/2 :
+                    rangeRects[0].x + rangeRects[0].width/2;
+
+                tooltip.style.top = `${y - tooltipHeight - tooltipTailHeight/2}px`;
+                tooltip.style.left = `${x - tooltipWidth/2}px`;
+
                 tooltipTail.style.top = `${y - tooltipTailHeight/2}px`;
-                tooltipTail.style.left = `${middleX - tooltipTailWidth/2}px`;
+                tooltipTail.style.left = `${x - tooltipTailWidth/2}px`;
 
                 
             }
