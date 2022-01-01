@@ -33,7 +33,7 @@ function createPosts() {
             <div class="slide-img">
                 <img src=${post.data.preview.images[0].source.url}>
              </div>
-            <div>
+            <div class="slide-caption">
                 ${post.data.title}
             </div>
         </div>
