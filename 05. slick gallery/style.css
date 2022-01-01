@@ -1,0 +1,51 @@
+:root{
+    --color-dark-grey: #272727;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.gallery{
+    position: relative;
+}
+
+.back, .forwards {
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+}
+
+.forwards {
+    right: 0;
+}
+
+
+
+.gallery-content{
+    height: 100%;
+    width: 100%;
+    background: var(--color-dark-grey);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide{
+    text-align: center;
+    background: chocolate;
+}
+
+.slide-img{
+    height: 80%;
+    width: auto;
+    margin: auto;
+}
+
+.slide-img > img {
+    height: 100%;
+    max-width: 100%;
+    border-radius: 16px;
+}
