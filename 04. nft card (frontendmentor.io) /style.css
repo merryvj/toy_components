@@ -100,7 +100,6 @@ p {
 }
 
 .card-image-overlay > img{
-    display: none;
     width: 20%;
     height: auto;
 }
