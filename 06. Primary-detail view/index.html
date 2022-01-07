@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+        <ul class="tabs">
+            <li class="tab" onclick="showDetail(this, '1')"> <h1> Hello</h1> </li>
+            <li class="tab" onclick="showDetail(this, '2')"> <h1> Hey</h1> </li>
+            <li class="tab" onclick="showDetail(this, '3')"> <h1> Howdy</h1> </li>
+            <li class="tab" onclick="showDetail(this, '4')"> <h1> Hi</h1> </li>
+        </ul>
+    
+        <div class="pageDetail"></div>
+    </div>
+    <!--Page detail content-->
+    <!--In a single-page application this would be a no go!-->
+    <section class="page" id="1">
+        Prim and proper, the default greeting.
+    </section>
+
+    <section class="page" id="2">
+        Hey. HEY. Say heyyyYYYyyy! Versatile.
+    </section>
+
+    <section class="page" id="3">
+        Alternative to "What's up, y'all."
+    </section>
+
+    <section class="page" id="4">
+        Hi [Name], hope you're doing well! 
+    </section>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
