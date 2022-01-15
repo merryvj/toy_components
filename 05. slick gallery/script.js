@@ -17,6 +17,7 @@ async function getPosts() {
     createPosts();
 }
 
+
 function createPosts() {
 
     let slidesHTML = '';

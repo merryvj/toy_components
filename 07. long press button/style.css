@@ -1,0 +1,26 @@
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.button {
+    padding: 1rem;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+.liked1 {
+    transform: scale(1.05) rotate(360deg);
+    background-color: coral;
+    fill: white;
+}
+
+.liked2 {
+    transform: scale(1.05) rotate(360deg);
+    background-color: coral;
+    fill: white;
+}
