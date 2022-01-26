@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 25vw);
+    grid-template-rows: repeat(3, 50vh);
+}
+
+.image {
+    position: relative;
+    background-color: chartreuse;
+}
+.image > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.details{
+    opacity: 0;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 16px;
+    z-index: 4;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0,0,0,0));
+    transition: 0.3s ease;
+}
+
+.image:hover > .details{
+    opacity: 1;
+}
