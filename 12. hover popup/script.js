@@ -17,9 +17,10 @@ async function renderImages() {
     imageData.data.children.forEach(image => {
         let htmlSegment = `<div class="image">
                             <img src=${image.data.preview.images[0].source.url}>
-                            <h3 class="details">
-                                ${image.data.title}
-                            </h3>
+                            <div class="details">
+                                <h3 class="title"> ${image.data.title} </h3>
+                                <button class="actions"> hey </button>
+                            </div>
                            </div>
                             `;
         html += htmlSegment;
@@ -31,9 +32,18 @@ async function renderImages() {
 
     let imageElems = document.querySelectorAll(".image");
     imageElems.forEach(image => {
-        image.addEventListener("mouseover", function() {
+        image.addEventListener("mouseenter", function() {
             
+            setTimeout(() => {
+                image.classList.add("expanded");
+            }, 2000);
         });
+
+        image.addEventListener("mouseout", function() {
+            image.classList.remove("expanded");
+            
+            
+        })
     })
 
 }

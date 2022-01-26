@@ -4,14 +4,17 @@
 }
 
 .gallery {
+    padding: 64px;
     display: grid;
-    grid-template-columns: repeat(4, 25vw);
-    grid-template-rows: repeat(3, 50vh);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 64px;
 }
 
 .image {
     position: relative;
     background-color: chartreuse;
+    transition: 0.3s ease;
+    height: 40vh;
 }
 .image > img{
     width: 100%;
@@ -29,9 +32,40 @@
     padding: 16px;
     z-index: 4;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0,0,0,0));
-    transition: 0.3s ease;
+    transition: 0.2s ease;
 }
 
 .image:hover > .details{
     opacity: 1;
+}
+
+.actions{
+    visibility: hidden;
+    max-height: 0;
+    
+}
+
+.expanded {
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+.expanded > .details > .actions{
+    visibility: visible;
+    max-height: 40px;
+    margin-top: 12px;
+    animation: slide-up 0.3s ease;
+}
+
+
+@keyframes slide-up {
+    from {
+        margin-bottom: -20px;
+        opacity: 0;
+    }
+
+    to {
+        margin-bottom: 0;
+        opacity: 1;
+    }
 }
