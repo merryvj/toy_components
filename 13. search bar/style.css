@@ -81,4 +81,21 @@ form button:hover{
     
 }
 
+ul {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
 
+li {
+    display: block;
+}
+
+.detail-modal {
+    z-index: 1;
+    background-color: #fff;
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    max-width: 100%;
+}
