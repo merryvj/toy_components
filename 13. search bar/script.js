@@ -25,13 +25,9 @@ function showData(data) {
     let html = '';
     data.items.forEach(book => {
         html += `
-            <li class='book' data-self=${book.selfLink}>
-                <img
-                    class='book-cover'
-                    src=${book.volumeInfo.imageLinks.thumbnail}
-                    
-                    />
-                <h3> ${book.volumeInfo.title}</h3>
+            <li class='book' data-self=${book.selfLink} style='background-image: url(${book.volumeInfo.imageLinks.thumbnail})' >
+            <h3 class='book-title'> ${book.volumeInfo.title}</h3>
+            <h3 class='book-author'> ${book.volumeInfo.authors[0].split(' ').slice(-1)[0] } </h3>
             </li>
         `;
 
