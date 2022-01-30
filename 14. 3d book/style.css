@@ -1,0 +1,68 @@
+
+:root {
+    --width: 200px;
+    --height: 300px;
+}
+
+main {
+    perspective: 400px;
+}
+.book{
+    width: 300px;
+    height: 400px;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.face {
+    position: absolute;
+    opacity: 0.4;
+}
+
+.front, .back {
+    width: 300px;
+    height: 400px;
+}
+
+.right, .left {
+    width: 100px;
+    height: 400px;
+    left: 100px;
+}
+
+.top, .bottom {
+    width: 400px;
+    height: 125px;
+    top: 100px;
+    
+}
+
+.front {
+    background: red;
+    transform: translateZ(100px);
+}
+
+.back {
+    background: orange;
+    transform: rotateX(-180deg) translateZ(100px);
+}
+
+.right {
+    background: purple;
+    transform: rotateY(90deg) translateZ(150px);
+}
+
+.left {
+    background: green;
+    transform: rotateY(-90deg) translateZ(150px);
+}
+
+.top {
+    background: yellow;
+    transform: rotateX(90deg) translateZ(200px);
+}
+
+.bottom{
+    background: grey;
+    transform: rotateX(-90deg) translateZ(200px);
+}
