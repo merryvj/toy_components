@@ -34,9 +34,7 @@ function showData(data) {
     });
 
     results.innerHTML = `
-        <ul class='books'>
-            ${html}
-        </ul>
+        ${html}
     `;
 }
 
@@ -48,31 +46,24 @@ results.addEventListener('click', e => {
         let selfLink = clickedEl.getAttribute('data-self');
         let parentPos = clickedEl.getBoundingClientRect();
 
-        getBookDetails(selfLink, parentPos);
+        getBookDetails(selfLink, clickedEl);
     }
 })
 
-async function getBookDetails(selfUrl, position) {
+async function getBookDetails(selfUrl, activeBook) {
     let res = await fetch(selfUrl);
     let data = await res.json();
     
-    let detailModal = document.createElement('div');
-    detailModal.classList.add('detail-modal');
-    detailModal.innerHTML = `
-        <p> ${data.volumeInfo.description} </p>
-    `
+    let details = document.createElement("li");
+    details.classList.add("book-details");
+    details.innerHTML = `
+        <p>${data.volumeInfo.description}</p>
+    `;
 
-    //TODO: account for position offset
-    detailModal.style.top = position.top;
-    detailModal.style.left = position.left;
+    activeBook.insertAdjacentElement('afterend', details);
+    activeBook.classList.add("active");
 
-    //hide modal on mouse out
-    detailModal.addEventListener('mouseout', () => {
-        detailModal.style.display = 'none';
-    })
-
-    results.append(detailModal);
-
+    
 
 
 }

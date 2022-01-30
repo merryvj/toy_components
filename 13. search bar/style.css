@@ -85,13 +85,13 @@ ul.books{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     background-color: black;
    
 
 }
 
-li.book {
+.book {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -107,7 +107,7 @@ li.book {
 
 }
 
-li.book::after{
+.book::after{
     content:"";
     position: absolute;
     top: 0;
@@ -136,11 +136,19 @@ li.book::after{
 
 }
 
-.detail-modal {
-    z-index: 1;
-    background-color: #fff;
-    position: absolute;
+.book-details{
+    display: block;
+    width: 500px;
+    max-width: 90%;
+    color: white;
+
+}
+
+.book.active{
     width: 300px;
-    height: 200px;
-    max-width: 100%;
+}
+
+.book.active::after{
+    backdrop-filter: none;
+    background: none;
 }
