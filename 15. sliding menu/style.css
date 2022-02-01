@@ -1,0 +1,33 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main {
+    width: 100%;
+    height: 100%;
+}
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 24px;
+    min-width: 200px;
+    background-color: cornflowerblue;
+    transform: translateX(-100%);
+    transition: 0.3s cubic-bezier(.08,.68,.2,1);
+}
+
+nav.open {
+    transform: none;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+
+}
