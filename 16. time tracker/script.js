@@ -1,4 +1,5 @@
 const timeDisplay = document.getElementById("time");
+const pointer = document.querySelector(".pointer-wrapper");
 
 let seconds = 0;
 let interval = null;
@@ -9,12 +10,14 @@ function startTimer() {
     }
 
     interval = setInterval(updateTimer, 1000);
+    pointer.classList.add("started");
 
 }
 
 function stopTimer() {
     clearInterval(interval);
     interval = null;
+    pointer.classList.remove("started");
 
 }
 
