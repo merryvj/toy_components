@@ -1,7 +1,12 @@
 const totalEl = document.getElementById("total");
-const historyEl = document.getElementById("history");
+const incomeEl = document.getElementById("income");
+const expenseEl = document.getElementById("expense");
 
-const entryEl = document.getElementById("entry");
+
+const historyEl = document.getElementById("history");
+const descEl = document.getElementById("description");
+const amountEl = document.getElementById("amount");
+
 const submitBtn = document.getElementById("submit");
 
 
@@ -25,8 +30,32 @@ let entries = [
     },
 ]
 
+function addEntry(e){
+    e.preventDefault();
+    let desc = descEl.value.trim();
+    let amt = amountEl.value.trim();
+
+    if(desc && amt) {
+        let entry = {
+            id: generateID(),
+            amount: parseFloat(amt),
+            desc: desc,
+        }
+        entries.push(entry);
+        makeEntryEl(entry);
+        updateValues();
+
+        descEl.value = '';
+        amountEl.value = '';
+    }
+}
+
+function generateID(){
+    return Math.floor(Math.random() * 1000);
+}
+
 function makeEntryEl(entry) {
-    
+
     const sign = entry.amount < 0 ? "-" : "+";
     const item = document.createElement("li");
     item.classList.add(entry.amount < 0 ? "minus" : "plus");
@@ -49,7 +78,10 @@ function updateValues(){
     let expense = amounts
         .filter(item => item < 0)
         .reduce((acc, item) => (acc =+ item), 0);
-    
+
+    totalEl.innerText = total;
+    incomeEl.innerText = income;
+    expenseEl.innerText = expense;
 }
 
 
@@ -62,3 +94,5 @@ function init(){
 }
 
 document.onload = init();
+
+submitBtn.addEventListener("click", addEntry);
