@@ -1,0 +1,8 @@
+.loader{
+    opacity: 0;
+    background-color: chartreuse;
+}
+
+.loader.show {
+    opacity: 1;
+}

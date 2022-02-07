@@ -9,14 +9,13 @@ async function getData(){
     if (!response.ok) {
         throw new Error(`Error! Status: ${response.status}`);
     }
-
     let data = await response.json();
     return data;
 }
 
 async function showData(){
     let data = await getData();
-    console.log(data);
+    //console.log(data);
     data.forEach(item => {
         const postEl = document.createElement("div");
         postEl.innerHTML = `
@@ -33,12 +32,21 @@ showData();
 
 function showLoader() {
     loader.classList.add("show");
+
+    setTimeout(() => {
+        loader.classList.remove("show");
+        setTimeout(() => {
+            page++;
+            showData();
+        }, 500);
+    }, 1000);
 }
 
 window.addEventListener("scroll", () => {
     const {scrollTop, scrollHeight, clientHeight} = document.documentElement;
-
-    if (scrollTop + clientHeight >= scrollHeight - 5){
-
+    let max = scrollTop + clientHeight;
+    console.log(max, scrollHeight);
+    if (scrollTop + clientHeight >= scrollHeight - 100){
+        showLoader();
     }
 })
