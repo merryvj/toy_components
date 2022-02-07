@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .switch{
+            width: 64px;
+            height: 32px;
+            border-radius: 9999px;
+            background-color: darkblue;
+            position: relative;
+            transition: 0.2s;
+        }
+
+        .switch.on{
+            background-color: gold !important;
+        }
+
+        .icon {
+            position: absolute;
+            display: block;
+            top: 4px;
+            left: 4px;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background-color: ghostwhite;
+            transition: 0.2s ease-out;
+
+        }
+
+        .switch.on > .icon{
+            left: 36px;
+
+        }
+        
+    
+        
+
+
+    </style>
+</head>
+<body>
+    <div class="switch">
+        <span class="icon"></span>
+    </div>
+
+    <script>
+        const switcher = document.querySelector(".switch");
+        const icon = document.querySelector(".icon");
+
+        switcher.addEventListener("click", () => {
+            switcher.classList.toggle("on"); //dark on
+        })
+    </script>
+    
+</body>
+</html>
