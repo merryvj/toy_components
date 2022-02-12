@@ -1,5 +1,6 @@
 const video = document.querySelector("#video");
 const playBtn = document.querySelector("#play");
+const mirrorBtn = document.querySelector("#mirror");
 const controls = document.querySelector("#controls");
 const progress = document.querySelector("#progress");
 const timestamp = document.querySelector("#timestamp");
@@ -7,6 +8,7 @@ const timestamp = document.querySelector("#timestamp");
 
 video.addEventListener("timeupdate", updateProgress);
 playBtn.addEventListener("click", toggleVideoPlay);
+mirrorBtn.addEventListener("click", toggleVideoMirror);
 progress.addEventListener("change", setVideoProgress);
 
 function updateProgress() {
@@ -53,6 +55,9 @@ function toggleVideoPlay() {
     }
 }
 
+function toggleVideoMirror() {
+    video.classList.toggle("mirrored");
+}
 
 
 //remove default browser controls from video

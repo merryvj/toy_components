@@ -13,6 +13,12 @@ body {
     cursor: pointer;
 }
 
+.mirrored {
+    transform: rotateY(180deg);
+    -webkit-transform:rotateY(180deg); 
+    -moz-transform:rotateY(180deg); 
+}
+
 #controls {
     width: 70%;
     display: flex;
