@@ -15,10 +15,10 @@ body {
 
 #controls {
     width: 70%;
-    background-color: aliceblue;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 16px;
 }
 
 #controls button {

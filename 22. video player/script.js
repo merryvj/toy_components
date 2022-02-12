@@ -45,10 +45,10 @@ function stopVideo() {
 }
 function toggleVideoPlay() {
     if(video.paused) {
-      //playBtn.setAttribute('data-icon','u');
+      playBtn.innerHTML = '<i class="lni lni-pause"></i>'
       video.play();
     } else {
-      //playBtn.setAttribute('data-icon','P');
+      playBtn.innerHTML = '<i class="lni lni-play"></i>';
       video.pause();
     }
 }
