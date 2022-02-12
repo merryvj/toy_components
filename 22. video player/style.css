@@ -1,0 +1,40 @@
+body {
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-height: 100vh;
+    margin: 0;
+}
+
+.screen {
+    width: 70%;
+    cursor: pointer;
+}
+
+#controls {
+    width: 70%;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#controls button {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+input[type="range" i] {
+    width: 100%;
+}
+
+@media (max-width: 800px) {
+    .screen,
+    .controls {
+        width: 90%;
+    }
+    
+}
