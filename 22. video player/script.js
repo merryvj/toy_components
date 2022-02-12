@@ -11,10 +11,32 @@ progress.addEventListener("change", setVideoProgress);
 
 function updateProgress() {
     progress.value = (video.currentTime / video.duration) * 100;
+    setTimestamp();
 }
 
 function setVideoProgress() {
-    return true;
+    video.currentTime = (+progress.value * video.duration) / 100;
+}
+
+function setTimestamp() {
+    let minutes = Math.floor(video.currentTime / 60);
+    let seconds = Math.floor(video.currentTime - minutes * 60);
+    let minuteValue;
+    let secondValue;
+
+    if (minutes < 10) {
+        minuteValue = '0' + minutes;
+    } else {
+        minuteValue = minutes;
+    }
+
+    if (seconds < 10) {
+        secondValue = '0' + seconds;
+    } else {
+        secondValue = seconds;
+    }
+
+    timestamp.textContent = `${minuteValue}:${secondValue}`;
 }
 
 function stopVideo() {
