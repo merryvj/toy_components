@@ -3,6 +3,7 @@ const playBtn = document.querySelector("#play");
 const mirrorBtn = document.querySelector("#mirror");
 const controls = document.querySelector("#controls");
 const progress = document.querySelector("#progress");
+const speed = document.querySelector("#speed");
 const timestamp = document.querySelector("#timestamp");
 
 
@@ -10,6 +11,7 @@ video.addEventListener("timeupdate", updateProgress);
 playBtn.addEventListener("click", toggleVideoPlay);
 mirrorBtn.addEventListener("click", toggleVideoMirror);
 progress.addEventListener("change", setVideoProgress);
+speed.addEventListener("change", updateVideoSpeed);
 
 function updateProgress() {
     progress.value = (video.currentTime / video.duration) * 100;
@@ -59,6 +61,11 @@ function toggleVideoMirror() {
     video.classList.toggle("mirrored");
 }
 
+
+function updateVideoSpeed() {
+    let rate = +speed.value;
+    video.playbackRate = rate;
+}
 
 //remove default browser controls from video
 video.removeAttribute("controls");

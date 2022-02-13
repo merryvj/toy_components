@@ -33,9 +33,14 @@ body {
     cursor: pointer;
 }
 
-input[type="range" i] {
+#speed {
+    
+}
+
+#progress {
     width: 100%;
 }
+
 
 @media (max-width: 800px) {
     .screen,
