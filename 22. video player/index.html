@@ -1,32 +1,42 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <video
-        src="videos/Hwasa.mp4"
-        id="video"
-        class="screen"
-    >
-        
-    </video>
+    <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+        <div class="video-wrapper">
+            <video src="videos/Hwasa.mp4" id="video" class="screen"></video>
+      
+            <div id="controls">
+              <button id="play">
+                <i class="lni lni-play"></i>
+              </button>
+              <button id="mirror">
+                <i class="lni lni-arrows-horizontal"></i>
+              </button>
+              <input type="range" id="speed" step="0.1" min="0.1" max="1" value="1" />
+              <input
+                type="range"
+                id="progress"
+                min="0"
+                max="100"
+                step="0.1"
+                value="0"
+              />
+              <span id="timestamp">00:00</span>
+            </div>
+            
+          </div>
 
-    <div id="controls">
-        <button id="play">
-            <i class="lni lni-play"></i>
-        </button>
-        <button id="mirror">
-            <i class="lni lni-arrows-horizontal"></i>
-        </button>
-        <input type="range" id="speed" step="0.1" min = "0.1" max="1" value="1"/>
-        <input type="range" id="progress" min="0" max="100" step="0.1" value="0"/>
-        <span id="timestamp">00:00</span>
-    </div>
+          <div class="webcam-wrapper">
+                
+        </div>
+    </main>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

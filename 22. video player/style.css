@@ -8,6 +8,23 @@ body {
     margin: 0;
 }
 
+main {
+    display: flex;
+    width: 100%;
+}
+
+.video-wrapper{
+    flex: 1;
+    background: turquoise;
+    width: 100%;
+}
+
+.webcam-wrapper{
+    flex: 1;
+    background: wheat;
+    width: 100%;
+}
+
 .screen {
     width: 70%;
     cursor: pointer;
