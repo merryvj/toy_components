@@ -11,27 +11,18 @@ body {
 main {
     display: flex;
     width: 100%;
+    height: 100%;
+    background: grey;
 }
 
-.video-wrapper{
+.screen-wrapper{
     flex: 1;
-    background: turquoise;
-    width: 100%;
+    height: 100%;
 }
 
-.webcam-wrapper{
-    flex: 1;
-    background: wheat;
-    width: 100%;
-}
-
-#webcam {
-    transform: rotateY(180deg);
-    -webkit-transform:rotateY(180deg); 
-    -moz-transform:rotateY(180deg); 
-}
 
 .screen {
+    width: 100%;
     cursor: pointer;
 }
 
@@ -42,7 +33,6 @@ main {
 }
 
 #controls {
-    width: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
