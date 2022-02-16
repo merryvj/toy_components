@@ -70,17 +70,30 @@ video.removeAttribute("controls");
 controls.style.visibility = "visible";
 
 const webcam = document.querySelector("#webcam");
+const cameraBtn = document.querySelector("#camera");
+let webcamOn = false;
 
-navigator.mediaDevices
-  .getUserMedia({video: true })
-  .then(function (stream) {
-    if ("srcObject" in webcam) {
-        webcam.srcObject = stream;
-    } 
-    webcam.onloadedmetadata = function (e) {
-        webcam.play();
-    };
-  })
-  .catch(function (err) {
-    console.log(err.name + ": " + err.message);
-  });
+
+
+  cameraBtn.addEventListener("click", () => {
+      if (webcamOn) {
+            webcamOn = false;
+            webcam.style.display = "none";
+        } else {
+            webcamOn = true;
+          webcam.style.display = "block";
+            navigator.mediaDevices
+            .getUserMedia({video: true })
+            .then(function (stream) {
+            if ("srcObject" in webcam) {
+                webcam.srcObject = stream;
+            } 
+            webcam.onloadedmetadata = function (e) {
+                webcam.play();
+            };
+            })
+            .catch(function (err) {
+            console.log(err.name + ": " + err.message);
+            })
+        }
+    });

@@ -32,6 +32,10 @@ main {
     -moz-transform:rotateY(180deg); 
 }
 
+#webcam {
+    display: none;
+}
+
 #controls {
     display: flex;
     justify-content: center;
