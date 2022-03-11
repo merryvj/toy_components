@@ -4,6 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="record-container" id="record-container">
@@ -11,7 +12,9 @@
             <div class="image-container">
                 <img src="images/lexie.jpg" alt="album-cover" id="cover">
             </div>
-            
+            <div class="progress" id="progress">
+                00:00/03:00
+            </div>
         </div>
 
         <div class="controls-container" id="controls-container">
@@ -28,7 +31,7 @@
 
         </div>
 
-        <audio src="music/manta.mp3"></audio>
+        <audio id="audio" src="music/manta.mp3"></audio>
         
 
     </div>
