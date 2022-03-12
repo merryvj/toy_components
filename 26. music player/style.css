@@ -15,14 +15,34 @@ body{
 
 }
 
+.spinner-container{
+    position: relative;
+}
+
+.spinner-arm{
+    z-index: 1;
+    position: absolute;
+    height: 80px;
+    width: 4px;
+    background-color: blue;
+    transform-origin: top left;
+    transition: 0.6s ease;
+}
+
+.spinner-arm.rotated{
+    transform: rotate(-45deg);
+}
+
 
 .image-container img{
     border-radius: 50%;
-    height: 20vh;
+    height: 100px;
 
     animation: rotate 3s linear infinite;
-    /*animation-play-state: paused;*/
+    animation-play-state: paused;
 }
+
+
 
 
 @keyframes rotate {
