@@ -8,8 +8,21 @@ const coverImg = document.querySelector("#cover");
 const audio = document.querySelector("#audio");
 
 
-playBtn.addEventListener("click", () => {
-    armEl.classList.toggle("rotated");
-    coverImg.style.animationPlayState = "running";
+playBtn.addEventListener("click", toggleMusic());
 
-})
+let isPlaying = false;
+
+function toggleMusic() {
+    if (isPlaying == false) {
+        audio.play();
+        isPlaying = true;
+        armEl.classList.toggle("rotated");
+        coverImg.style.animationPlayState = "running";
+    } else if (isPlaying == true) {
+        audio.pause();
+        isPlaying = false;
+        armEl.classList.toggle("rotated");
+        coverImg.style.animationPlayState = "paused";
+    }
+
+}
