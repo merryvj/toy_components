@@ -26,3 +26,33 @@ function toggleMusic() {
     }
 
 }
+
+let currIndex = 0;
+let tracks = [
+    "lane8", "lexie"
+];
+
+loadTrack(tracks[currIndex]);
+function loadTrack(track) {
+    audio.src=`music/${track}.mp3`;
+    coverImg.src=`iamges/${track}.jpg`;
+}
+
+function nextTrack() {
+    currIndex++;
+    if (currIndex + 1 == tracks.length) {
+        currIndex = 0;
+    }
+
+    loadTrack(tracks[currIndex]);
+}
+
+function prevTrack() {
+    currIndex--;
+    if (currIndex < 0) {
+        currIndex = tracks.length - 1;
+    }
+
+    loadTrack(tracks[currIndex]);
+
+}
