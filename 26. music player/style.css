@@ -33,6 +33,24 @@ body{
     transform: rotate(-45deg);
 }
 
+.spinner-pin {
+    z-index: 1;
+    border-radius: 50%;
+    background-color: grey;
+    height: 5px;
+    width: 5px;
+    position: absolute;
+    top: calc(50% - 2.5px);
+    left: calc(50% - 2.5px)
+}
+
+.image-container {
+    position: relative;
+    border-radius: 50%;
+    padding: 50px;
+    background-color: darkblue;
+}
+
 
 .image-container img{
     border-radius: 50%;
